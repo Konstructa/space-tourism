@@ -1,0 +1,44 @@
+ .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 55px;
+    margin-top: 40px;
+}
+
+.star {
+    height: 48px;
+    width: 48px;
+}
+
+.menu {
+    width: 55vw;
+    height: 96px;
+    background-color: blue;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+
+}
+
+body {
+    background-image: url(../../assets/home/background-home-desktop.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #FFFFFF;
+}
