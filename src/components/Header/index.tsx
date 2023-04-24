@@ -37,12 +37,12 @@ const Header = () => {
         <div>
             <div className="header">
                 <img src={logo} alt="logo" className="star" />
-                <div className="trace"></div>
-                <div className="content" id={icon}>
+                <div className="header-trace"></div>
+                <div className="header-content" id={icon}>
                     <div className={active}>
                         {nav.map((e) => (
-                            <div className="nav">
-                                <p className='pNumber'>{e.number}</p>
+                            <div className="header-nav">
+                                <p className='p-number'>{e.number}</p>
                                 <p>{e.page}</p>
                             </div>
                         ))}

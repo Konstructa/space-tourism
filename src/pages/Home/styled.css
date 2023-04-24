@@ -1,0 +1,129 @@
+body {
+    background-image: url(../../assets/home/background-home-desktop.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home {
+    display: flex;
+    width: 75vw;
+    margin: auto;
+    margin-top: 18vh;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.home-information {
+    color: #FFFFFF;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-information h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4.725px;
+    font-weight: 400;
+    font-style: normal;
+    color: #D0D6F9;
+}
+
+.home-information h1 {
+    font-family: 'Bellefair';
+    font-weight: 400;
+    font-size: 150px;
+    margin: 0;
+}
+
+.home-information p {
+    font-family: 'Barlow';
+    font-size: 18px;
+    line-height: 32px;
+    color: #D0D6F9;
+}
+
+.btn-explore {
+    padding: 110px 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Bellefair';
+    font-size: 32px;
+    line-height: 37px;
+    font-size: 32px;
+    color: #0B0D17;
+    background-color: #FFFFFF;
+    border-style: none;
+}
+
+.btn-explore:hover {
+	transform: scale3d(1);
+    animation: expand 1s infinite;
+}
+
+@keyframes expand {
+	0% {
+		box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+	}
+
+	70% {
+		box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
+	}
+
+	100% {
+		box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
+	}
+}
+
+
+@media screen and (max-width: 1310px) {
+    body {
+        background-image: url(../../assets/home/background-home-tablet.jpg);
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 10vh;
+        gap: 100px;
+    }
+
+    .home-information {
+        width: 60vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-image: url(../../assets/home/background-home-mobile.jpg);
+    }
+
+    .home-information h1 {
+        font-size: 80px;
+    }
+
+    .home-information h3 {
+        font-size: 16px;
+    }
+
+    .home-information p {
+        font-size: 15px;
+    }
+
+    .home-information {
+        width: 80vw;
+    }
+
+    .btn-explore {
+        padding: 75px 55px;
+        font-size: 20px;
+    }
+}
