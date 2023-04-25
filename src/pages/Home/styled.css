@@ -1,5 +1,5 @@
 body {
-    background-image: url(../../assets/home/background-home-desktop.jpg);
+    background-image: url(../../assets/home/background-home-desktop.jpg) ;
     width: 100%;
     min-height: 100vh;
     background-size: cover;
@@ -7,13 +7,15 @@ body {
     background-repeat: no-repeat;
 }
 
+
+
 .home {
     display: flex;
     width: 75vw;
     margin: auto;
     margin-top: 18vh;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items: flex-end;
 }
 
 .home-information {
@@ -60,22 +62,22 @@ body {
 }
 
 .btn-explore:hover {
-	transform: scale3d(1);
+    transform: scale3d(1);
     animation: expand 1s infinite;
 }
 
 @keyframes expand {
-	0% {
-		box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
-	}
+    0% {
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+    }
 
-	70% {
-		box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
-	}
+    70% {
+        box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
+    }
 
-	100% {
-		box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
-	}
+    100% {
+        box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.2);
+    }
 }
 
 

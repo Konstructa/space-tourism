@@ -1,0 +1,138 @@
+body {
+    background-image: url(../../assets/destination/background-destination-desktop.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.destination{
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.destination-content {
+
+
+}
+
+.title {
+    display: flex;
+    gap: 20px;
+    margin-left: 12.5rem;
+}
+
+.title h3 {
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4.725px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 34px;
+}
+
+.destination-planet {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    margin-right: 9%;
+    justify-content: space-around;
+    gap: 80px;
+    align-items: center;
+}
+
+.destination-menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    color: #D0D6F9;
+}
+
+.destination-menu p {
+    padding: 15px 10px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+}
+
+.destination-menu p:hover {
+    border-bottom: 4px solid rgb(255, 255, 255, 0.5);
+}
+
+
+.destination-information {
+    width: 37%;
+}
+
+.planet-description h1 {
+    font-family: 'Bellefair';
+    font-weight: 400;
+    font-size: 100px;
+    margin: 30px 0 0 0;
+    text-transform: uppercase;
+}
+
+.planet-description p {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #D0D6F9;
+}
+
+.planet-distance {
+    display: flex;
+    align-items: center;
+    gap: 79px;
+    text-transform: uppercase;
+    border-top: 1px solid #383B4B;
+    margin-top: 18%;
+}
+
+.distance-detail h5 {
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+    color: #D0D6F9;
+}
+
+.distance-detail p {
+    font-family: 'Bellefair';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1310px) { 
+    body {
+        background-image: url(../../assets/destination/background-destination-tablet.jpg);
+    }
+
+    .planet {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    body {
+        background-image: url(../../assets/destination/background-destination-mobile.jpg);
+    }
+
+    .planet {
+        width: 175px;
+        height: 175px;
+    }
+}

@@ -1,7 +1,7 @@
 import logo from '../../assets/shared/logo.svg'
 import menu from '../../assets/shared/icon-hamburger.svg'
 import close from '../../assets/shared/icon-close.svg'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from "react-router-dom";
 import './styled.css'
 import { useState } from 'react'
 
@@ -40,12 +40,38 @@ const Header = () => {
                 <div className="header-trace"></div>
                 <div className="header-content" id={icon}>
                     <div className={active}>
-                        {nav.map((e) => (
-                            <div className="header-nav">
-                                <p className='p-number'>{e.number}</p>
-                                <p>{e.page}</p>
-                            </div>
-                        ))}
+                        <NavLink 
+                        to = '/' 
+                        style={({ isActive }) => 
+                        ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
+                        className="header-nav">
+                            <p className='p-number'>{nav[0].number}</p>
+                            <p>{nav[0].page}</p>
+                        </NavLink>
+                        <NavLink 
+                        to = '/destination' 
+                        style={({ isActive }) => 
+                        ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
+                        className="header-nav">
+                            <p className='p-number'>{nav[1].number}</p>
+                            <p>{nav[1].page}</p>
+                        </NavLink>
+                        <NavLink 
+                        to = '/crew' 
+                        style={({ isActive }) => 
+                        ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
+                        className="header-nav">
+                            <p className='p-number'>{nav[2].number}</p>
+                            <p>{nav[2].page}</p>
+                        </NavLink>
+                        <NavLink 
+                        to = '/technology' 
+                        style={({ isActive }) => 
+                        ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
+                        className="header-nav">
+                            <p className='p-number'>{nav[3].number}</p>
+                            <p>{nav[3].page}</p>
+                        </NavLink>
                     </div>
                     <img src={menu} onClick={navToggle} alt="menu-hamburger" className='menu-mobile' />
                     <img src={close} onClick={navToggle} alt="menu-close" className='menu-close' />
