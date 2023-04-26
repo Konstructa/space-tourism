@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="header">
+            <header className="header">
                 <img src={logo} alt="logo" className="star" />
                 <div className="header-trace"></div>
                 <div className="header-content" id={icon}>
@@ -76,7 +76,7 @@ const Header = () => {
                     <img src={menu} onClick={navToggle} alt="menu-hamburger" className='menu-mobile' />
                     <img src={close} onClick={navToggle} alt="menu-close" className='menu-close' />
                 </div>
-            </div>
+            </header>
         </div>
     )
 }
