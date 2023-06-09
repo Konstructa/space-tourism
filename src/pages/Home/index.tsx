@@ -1,9 +1,10 @@
 import './styled.css'
+import * as Styled from './styled'
 
 
 const Home = () => {
     return (
-        <div className='home'>
+        <Styled.Home>
             <div className="home-information">
                 <h3> SO, YOU WANT TO TRAVEL TO </h3>
                 <h1> SPACE </h1>
@@ -14,7 +15,7 @@ const Home = () => {
                     EXPLORE
                 </button>
             </div>
-        </div>
+        </Styled.Home>
     )   
 }
 

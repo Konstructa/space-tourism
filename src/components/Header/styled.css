@@ -3,7 +3,7 @@
      justify-content: space-between;
      align-items: center;
      margin-left: 3.5rem;
-     margin-top: 40px;
+     padding-top: 40px;
  }
 
  .star {
@@ -143,12 +143,9 @@
          display: block;
      }
 
-     #active .menu-close {
+    .menu-close {
          display: block;
          z-index: 1;
      }
 
-     #active .menu-mobile {
-         display: none;
-     }
  }

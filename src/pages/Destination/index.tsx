@@ -1,6 +1,7 @@
 import Header from '../../components/Header'
 import './styled.css'
 import moon from '../../assets/destination/image-moon.png'
+import * as Styled from './styled'
 
 interface PlanetDestination {
     name: string,
@@ -11,8 +12,7 @@ interface PlanetDestination {
 
 const Destination = () => {
     return (
-        <div className="destination">
-
+        <Styled.Destination>
             <div className="destination-content">
                 <div className="title">
                     <h3 style={{ color: 'rgb(255, 255, 255, 0.75)', fontWeight: 'bold'}}>
@@ -53,7 +53,7 @@ const Destination = () => {
                 </div>
 
             </div>
-        </div>
+        </Styled.Destination>
     )
 }
 

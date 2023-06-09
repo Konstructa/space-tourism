@@ -5,16 +5,24 @@ import { NavLink, Link } from "react-router-dom";
 import './styled.css'
 import { useState } from 'react'
 
+interface HeaderProps {
+    setBackground: (image: string) => void
+} 
 
-const Header = () => {
+
+const Header = ({ setBackground }: HeaderProps) => {
 
     const [active, setActive] = useState('menu');
     const [icon, setIcon] = useState('');
+    const [open, setOpen] = useState(false);
+
     
     const navToggle = () => {
         active === 'menu' ? setActive('menu menu_active') : setActive('menu')
 
         icon === '' ? setIcon('active') : setIcon('');
+
+        setOpen(current => !current)
     }
 
     const nav = [
@@ -44,7 +52,9 @@ const Header = () => {
                         to = '/' 
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
-                        className="header-nav">
+                        className="header-nav"
+                        onClick={() => setBackground('home')}
+                        >
                             <p className='p-number'>{nav[0].number}</p>
                             <p>{nav[0].page}</p>
                         </NavLink>
@@ -52,7 +62,9 @@ const Header = () => {
                         to = '/destination' 
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
-                        className="header-nav">
+                        className="header-nav"
+                        onClick={() => setBackground('destination')}
+                        >
                             <p className='p-number'>{nav[1].number}</p>
                             <p>{nav[1].page}</p>
                         </NavLink>
@@ -60,7 +72,9 @@ const Header = () => {
                         to = '/crew' 
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                        className="header-nav">
+                        className="header-nav"
+                        onClick={() => setBackground('crew')}
+                        >
                             <p className='p-number'>{nav[2].number}</p>
                             <p>{nav[2].page}</p>
                         </NavLink>
@@ -68,13 +82,20 @@ const Header = () => {
                         to = '/technology' 
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                        className="header-nav">
+                        className="header-nav"
+                        onClick={() => setBackground('technology')}
+                        >
                             <p className='p-number'>{nav[3].number}</p>
                             <p>{nav[3].page}</p>
                         </NavLink>
                     </div>
-                    <img src={menu} onClick={navToggle} alt="menu-hamburger" className='menu-mobile' />
+
+                    {!open ? 
+                    <img src={menu} onClick={navToggle} alt="menu-hamburger" className='menu-mobile' /> 
+                    :
                     <img src={close} onClick={navToggle} alt="menu-close" className='menu-close' />
+                    }
+                    
                 </div>
             </header>
         </div>
