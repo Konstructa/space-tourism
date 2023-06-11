@@ -1,17 +1,9 @@
-body {
-    background-image: url(../../assets/home/background-home-desktop.jpg) ;
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .home {
     display: flex;
     width: 75vw;
     margin: auto;
-    margin-top: 18vh;
+    padding-top: 18vh;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -80,15 +72,13 @@ body {
 
 
 @media screen and (max-width: 1310px) {
-    body {
-        background-image: url(../../assets/home/background-home-tablet.jpg);
-    }
+
 
     .home {
         flex-direction: column;
         align-items: center;
         width: 90%;
-        margin-top: 10vh;
+        padding-top: 10vh;
         gap: 100px;
     }
 
@@ -110,9 +100,7 @@ body {
 }
 
 @media screen and (max-width: 760px) {
-    body {
-        background-image: url(../../assets/home/background-home-mobile.jpg);
-    }
+
 
     .home-information h1 {
         font-size: 80px;

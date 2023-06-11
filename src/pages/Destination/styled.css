@@ -1,11 +1,4 @@
-body {
-    background-image: url(../../assets/destination/background-destination-desktop.jpg);
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 .destination{
     margin-top: 5%;
@@ -120,9 +113,7 @@ body {
 }
 
 @media screen and (max-width: 1310px) { 
-    body {
-        background-image: url(../../assets/destination/background-destination-tablet.jpg);
-    }
+
 
     .planet {
         width: 300px;
@@ -173,9 +164,7 @@ body {
 }
 
 @media screen and (max-width: 760px) { 
-    body {
-        background-image: url(../../assets/destination/background-destination-mobile.jpg);
-    }
+
 
     .planet {
         width: 175px;

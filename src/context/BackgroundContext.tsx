@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import { theme } from '../styles/theme';
+
 
 interface BackgroundProps {
     backgroundImage: string
@@ -7,12 +7,12 @@ interface BackgroundProps {
 }
 
 const BackgroundContext = createContext<BackgroundProps>({
-    backgroundImage: theme.background.home.desktop,
+    backgroundImage: '',
     changeBackgroundImage: () => { }
 })
 
 export const BackgroundProvider = ({ children }: any) => {
-    const [backgroundImage, setBackgroundImage] = useState<string>('');
+    const [backgroundImage, setBackgroundImage] = useState<string>('home');
 
     const changeBackgroundImage = (image: string) => {
         setBackgroundImage(image);

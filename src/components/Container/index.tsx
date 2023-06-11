@@ -1,14 +1,19 @@
 
 import * as Styled from './styles'
+import { useContext  } from 'react'
+import BackgroundContext from '../../context/BackgroundContext';
+
 
 interface ContainerProps {
   children: any,
-  background: string
 }
 
-const Container = ({ children, background}: ContainerProps) => {
+const Container = ({ children }: ContainerProps) => {
+
+  const { backgroundImage } = useContext(BackgroundContext);
+
   return (
-    <Styled.Container background={background}>
+    <Styled.Container background={backgroundImage}>
         {children}
     </Styled.Container>
   )

@@ -1,15 +1,29 @@
 import styled, { css } from 'styled-components';
 
-export const Container  = styled.div<{  background: string; }>`
+export const Container  = styled.div<{ background: string; }>`
     height: 100vh;
-    background-color: green;
     ${({theme, background}) => css`
-        background-image: url(../../assets/${background}/background-${background}-desktop.jpg) ;
+        background-image: url(${theme.background[background].desktop}) ;
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     `}
+
+
+    @media screen and (max-width: 1310px) { 
+        ${({ theme, background }) => css`
+            background-image: url(${theme.background[background].tablet}) ;
+        `};
+       
+    }
+
+    @media screen and (max-width: 760px) { 
+        ${({ theme, background }) => css`
+             background-image: url(${theme.background[background].mobile}) ;
+        `};
+       
+    }
 `;
 
