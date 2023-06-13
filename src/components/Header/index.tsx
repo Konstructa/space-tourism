@@ -1,17 +1,14 @@
 import logo from '../../assets/shared/logo.svg'
 import menu from '../../assets/shared/icon-hamburger.svg'
 import close from '../../assets/shared/icon-close.svg'
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './styled.css'
-import { useState } from 'react'
-
-interface HeaderProps {
-    setBackground: (image: string) => void
-} 
+import { useContext, useState } from 'react'
+import BackgroundContext from '../../context/BackgroundContext';
 
 
-const Header = ({ setBackground }: HeaderProps) => {
-
+const Header = () => {
+    const { changeBackgroundImage } = useContext(BackgroundContext)
     const [active, setActive] = useState('menu');
     const [icon, setIcon] = useState('');
     const [open, setOpen] = useState(false);
@@ -53,7 +50,7 @@ const Header = ({ setBackground }: HeaderProps) => {
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
                         className="header-nav"
-                        onClick={() => setBackground('home')}
+                        onClick={() => changeBackgroundImage('home')}
                         >
                             <p className='p-number'>{nav[0].number}</p>
                             <p>{nav[0].page}</p>
@@ -63,7 +60,7 @@ const Header = ({ setBackground }: HeaderProps) => {
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : ""})}
                         className="header-nav"
-                        onClick={() => setBackground('destination')}
+                        onClick={() => changeBackgroundImage('destination')}
                         >
                             <p className='p-number'>{nav[1].number}</p>
                             <p>{nav[1].page}</p>
@@ -73,7 +70,7 @@ const Header = ({ setBackground }: HeaderProps) => {
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
                         className="header-nav"
-                        onClick={() => setBackground('crew')}
+                        onClick={() => changeBackgroundImage('crew')}
                         >
                             <p className='p-number'>{nav[2].number}</p>
                             <p>{nav[2].page}</p>
@@ -83,7 +80,7 @@ const Header = ({ setBackground }: HeaderProps) => {
                         style={({ isActive }) => 
                         ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
                         className="header-nav"
-                        onClick={() => setBackground('technology')}
+                        onClick={() => changeBackgroundImage('technology')}
                         >
                             <p className='p-number'>{nav[3].number}</p>
                             <p>{nav[3].page}</p>

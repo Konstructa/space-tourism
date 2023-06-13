@@ -5,7 +5,7 @@ export const Home = styled.div`
     display: flex;
     width: 75vw;
     margin: auto;
-    margin-top: 18vh;
+    padding-top: 18vh;
     justify-content: space-between;
     align-items: flex-end;
 
@@ -18,7 +18,8 @@ export const Home = styled.div`
         flex-direction: column;
         align-items: center;
         width: 90%;
-        margin-top: 10vh;
+        align-items: center;
+        padding-top: 20vh;
         gap: 100px;
     }
 
