@@ -10,4 +10,8 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Bellefair', serif;
         color: #FFFFFF;
     }
+
+    html {
+        font-size: 62.5%
+    }
 `;
