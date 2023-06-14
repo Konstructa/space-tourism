@@ -1,8 +1,10 @@
+.destination-content {
+    padding-top: 10rem
+}
 
-
-.destination{
-    margin-top: 5%;
-    margin-bottom: 3%;
+.destination {
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .title {
@@ -26,10 +28,12 @@
     justify-content: center;
     width: 75%;
     margin: auto;
+    padding-top: 5%;
     margin-right: 9%;
     justify-content: space-around;
     gap: 80px;
     align-items: center;
+    padding-bottom: 10rem
 }
 
 .destination-menu {
@@ -83,8 +87,8 @@
     gap: 79px;
     text-transform: uppercase;
     border-top: 1px solid #383B4B;
-    margin-top: 18%;
-    padding-top: 30px;
+    padding-top: 8%;
+    margin-top: 4rem
 }
 
 .distance-detail h5 {
@@ -114,7 +118,10 @@
 
 @media screen and (max-width: 1310px) { 
 
-
+    .destination-content {
+        padding-top: 10rem
+    }
+    
     .planet {
         width: 300px;
         height: 300px;
@@ -123,8 +130,7 @@
     .destination-planet {
         flex-direction: column;
         width: 82%;
-        margin: auto;
-        margin-top: 7%;
+        padding-top: 7%;
         gap: 20px;
     }
 
@@ -140,7 +146,8 @@
 
     .planet-distance {
         justify-content: center;
-        margin-top: 7%;
+        padding-top: 3%;
+   
     }
 
     .title {
@@ -155,7 +162,7 @@
 
     .planet-description h1 {
         font-size: 80px;
-        margin-top: 5px;
+        padding-top: 5px;
     }
 
     .planet-description p {
@@ -178,7 +185,8 @@
 
     .planet-distance {
         flex-direction: column;
-        gap: 0;
+        gap: 35px;
+        padding-top: 40px;
     }
 
     .planet-description h1 {
@@ -209,9 +217,5 @@
         font-size: 28px;
     }
 
-    .planet-distance {
-        gap: 35px;
-        padding-top: 40px;
-    }
 
 }
