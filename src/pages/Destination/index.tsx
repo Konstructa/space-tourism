@@ -1,16 +1,24 @@
-import Header from '../../components/Header'
 import './styled.css'
-import moon from '../../assets/destination/image-moon.png'
 import * as Styled from './styled'
+import { useState } from 'react'
+import { planets } from './planet'
+import { Distance } from '../../components/destination/Distance';
 
 interface PlanetDestination {
-    name: string,
-    description: string,
-    distance: string,
-    time: string
+    name: string;
+    image: string;
+    description: string;
+    distance: string;
+    travel: string;
 }
 
 const Destination = () => {
+    const [planet, setPlanet] = useState<PlanetDestination>(planets[0])
+
+    const selectPlanet = (id: number) => {
+        setPlanet(planets[id])
+    }
+
     return (
         <Styled.Destination>
             <div className="destination-content">
@@ -24,34 +32,24 @@ const Destination = () => {
                 </div>
 
                 <div className="destination-planet">
-                    <img src={moon} alt="" className="planet" />
+                    <img src={planet.image} alt="" className="planet" />
                     
                     <div className="destination-information">
                         <div className="destination-menu">
-                            <p>Moon</p>
-                            <p>Moon</p>
-                            <p>Moon</p>
-                            <p>Moon</p>
+                            <p onClick={() => selectPlanet(0)}>Moon</p>
+                            <p onClick={() => selectPlanet(1)}>Mars</p>
+                            <p onClick={() => selectPlanet(2)}>Europa</p>
+                            <p onClick={() => selectPlanet(3)}>Titan</p>
                         </div>
 
                         <div className="planet-description">
-                            <h1>Moon</h1>
-                            <p> See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+                            <h1>{planet?.name}</h1>
+                            <p> {planet?.description}</p>
                         </div>
 
-                        <div className="planet-distance">
-                            <div className="distance-detail">
-                                <h5>AVG. DISTANCE</h5>
-                                <p>384,400 km</p> 
-                            </div>
-                            <div className="distance-detail">
-                                <h5>Est. travel time</h5>
-                                <p>3 days</p> 
-                            </div>
-                        </div>
+                        <Distance distance={planet.distance} travel={planet.travel}/>
                     </div>
                 </div>
-
             </div>
         </Styled.Destination>
     )
