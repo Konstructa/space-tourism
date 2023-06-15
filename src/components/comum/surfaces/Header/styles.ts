@@ -19,7 +19,7 @@ export const Trace = styled.div`
      background-color: #FFFFFF;
      opacity: 0.25;
      position: relative;
-     left: 6vw;
+     left: 5vw;
      z-index: 2;
 
      @media screen and (max-width: 1310px) {

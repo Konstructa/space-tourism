@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import './styled.css'
 import { useContext, useState } from 'react'
 import BackgroundContext from '../../../../context/BackgroundContext';
+import { Trace, Logo } from './styles';
+import { NavBarItem } from './Nav/NavItem';
 
 
 const Header = () => {
@@ -22,69 +24,37 @@ const Header = () => {
         setOpen(current => !current)
     }
 
-    const nav = [
+    const navItem = [
         {
             number: '00',
-            page: 'HOME'
+            page: 'home'
         }, {
             number: '01',
-            page: 'DESTINATION'
+            page: 'destination'
         }, {
             number: '02',
-            page: 'CREW'
+            page: 'crew'
         }, {
             number: '03',
-            page: 'TECHNOLOGY'
+            page: 'technology'
         },
     ]
 
     return (
         <div>
             <header className="header">
-                <img src={logo} alt="logo" className="star" />
-                <div className="header-trace"></div>
+                <Logo src={logo} alt="logo" className="star" />
+                <Trace />
                 <div className="header-content" id={icon}>
                     <div className={active}>
-                        <NavLink
-                            to='/'
-                            style={({ isActive }) =>
-                                ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                            className="header-nav"
-                            onClick={() => changeBackgroundImage('home')}
-                        >
-                            <p className='p-number'>{nav[0].number}</p>
-                            <p>{nav[0].page}</p>
-                        </NavLink>
-                        <NavLink
-                            to='/destination'
-                            style={({ isActive }) =>
-                                ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                            className="header-nav"
-                            onClick={() => changeBackgroundImage('destination')}
-                        >
-                            <p className='p-number'>{nav[1].number}</p>
-                            <p>{nav[1].page}</p>
-                        </NavLink>
-                        <NavLink
-                            to='/crew'
-                            style={({ isActive }) =>
-                                ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                            className="header-nav"
-                            onClick={() => changeBackgroundImage('crew')}
-                        >
-                            <p className='p-number'>{nav[2].number}</p>
-                            <p>{nav[2].page}</p>
-                        </NavLink>
-                        <NavLink
-                            to='/technology'
-                            style={({ isActive }) =>
-                                ({ borderBottom: isActive ? '2px solid rgba(255, 255, 255)' : "" })}
-                            className="header-nav"
-                            onClick={() => changeBackgroundImage('technology')}
-                        >
-                            <p className='p-number'>{nav[3].number}</p>
-                            <p>{nav[3].page}</p>
-                        </NavLink>
+                        {navItem.map((page, index) => {
+                            return <NavBarItem
+                                key={index}
+                                page={page.page}
+                                title={page.page}
+                                number={page.number}
+                            />
+                        })}
                     </div>
 
                     {!open ?
