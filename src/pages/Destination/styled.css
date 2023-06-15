@@ -59,6 +59,15 @@
     border-bottom: 4px solid rgb(255, 255, 255, 0.5); 
 }
 
+.destination-menu p:active {
+    border-bottom: 4px solid white; 
+}
+
+
+[select="select"] {
+    color: green;
+}
+
 
 .destination-information {
     width: 37%;

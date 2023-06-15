@@ -3,6 +3,7 @@ import * as Styled from './styled'
 import { useState } from 'react'
 import { planets } from './planet'
 import { Distance } from '../../components/destination/Distance';
+import MenuDestination from '../../components/destination/Menu';
 
 interface PlanetDestination {
     name: string;
@@ -19,6 +20,8 @@ const Destination = () => {
         setPlanet(planets[id])
     }
 
+    const planetsName = planets.map(planet => planet.name);
+
     return (
         <Styled.Destination>
             <div className="destination-content">
@@ -34,20 +37,23 @@ const Destination = () => {
                 <div className="destination-planet">
                     <img src={planet.image} alt="" className="planet" />
                     
+
                     <div className="destination-information">
-                        <div className="destination-menu">
-                            <p onClick={() => selectPlanet(0)}>Moon</p>
-                            <p onClick={() => selectPlanet(1)}>Mars</p>
-                            <p onClick={() => selectPlanet(2)}>Europa</p>
-                            <p onClick={() => selectPlanet(3)}>Titan</p>
-                        </div>
+
+                        <MenuDestination 
+                            planetsName={planetsName} 
+                            selectPlanet={selectPlanet}
+                        />
 
                         <div className="planet-description">
                             <h1>{planet?.name}</h1>
                             <p> {planet?.description}</p>
                         </div>
 
-                        <Distance distance={planet.distance} travel={planet.travel}/>
+                        <Distance 
+                            distance={planet.distance} 
+                            travel={planet.travel}
+                        />
                     </div>
                 </div>
             </div>

@@ -1,44 +1,25 @@
-import styled, { css } from 'styled-components'
+import { styled, css } from "styled-components";
 
-
-export const Destination = styled.div`
-    animation: 1s ease-out 0s 1 slideInFromLeft; 
-    
-    @keyframes slideInFromLeft {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-
-
-    @media screen and (max-width: 1310px) {
-   
-    }
-
-`;
-
-export const Planet = styled.p`
+export const Planet = styled.p<{ isSelected: boolean }>`
     padding: 15px 10px;
     cursor: pointer;
     border-bottom: 4px solid transparent;
 
-    &:target {
-        color: blue
-    }
-
     &:hover {
         border-bottom: 4px solid rgb(255, 255, 255, 0.5); 
     }
+    
+    ${({isSelected }) =>  isSelected && css`
+        border-bottom: 4px solid white; 
+    `}
+
+
 
     @media screen and (max-width: 760px) {
         padding: 15px 0px;
     }
 `
-
-export const MenuDestination = styled.div`
+export const Menu = styled.div`
     display: flex;
     gap: 40px;
     align-items: center;
@@ -59,5 +40,3 @@ export const MenuDestination = styled.div`
         gap: 2.5rem;
     }
 `
-
-
