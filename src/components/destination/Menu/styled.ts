@@ -1,7 +1,18 @@
 import { styled, css } from "styled-components";
 
 export const Planet = styled.p<{ isSelected: boolean }>`
-    padding: 15px 10px;
+    ${({ theme }) => css`
+        text-transform: uppercase;
+        font-family: 'Barlow Condensed';
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        color: ${theme.colors.secondaryColor};
+        height: 4rem;
+    `} 
+
+
     cursor: pointer;
     border-bottom: 4px solid transparent;
 
@@ -11,32 +22,28 @@ export const Planet = styled.p<{ isSelected: boolean }>`
     
     ${({isSelected }) =>  isSelected && css`
         border-bottom: 4px solid white; 
+        color: white;
     `}
-
-
 
     @media screen and (max-width: 760px) {
         padding: 15px 0px;
+        line-height: 16.8px;
+        letter-spacing: 2.36px;
+        font-size: 1.4rem;
     }
 `
 export const Menu = styled.div`
     display: flex;
-    gap: 40px;
+    gap: 3.6rem;
     align-items: center;
-    text-transform: uppercase;
-    font-family: 'Barlow Condensed';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 2.7px;
-    color: #D0D6F9;
 
     @media screen and (max-width: 1310px) {
         justify-content: center;
-        gap: 1.0rem;
+        gap: 3rem;
     }
 
     @media screen and (max-width: 760px) {
-        gap: 2.5rem;
+        gap: 3.5rem;
+        padding-top: 2.6rem;
     }
 `
