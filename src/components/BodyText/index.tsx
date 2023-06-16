@@ -1,7 +1,11 @@
 import { Text } from './styles'
 
-export const BodyText = ({ children }: any) => {
+interface BodyTextProps {
+  text: string
+}
+
+export const BodyText = ({ text }: BodyTextProps) => {
   return (
-   <Text> {children} </Text>
+    <Text> {text} </Text>
   )
 }

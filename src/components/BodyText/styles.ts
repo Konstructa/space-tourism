@@ -6,7 +6,10 @@ export const Text = styled.p`
         font-weight: 400;
         font-size: 1.8rem;
         line-height: 3.2rem;
+        color: ${theme.colors.secondaryColor};
     `}
+
+
 
     @media screen and (max-width: 1310px) {
         font-size: 1.6rem;
