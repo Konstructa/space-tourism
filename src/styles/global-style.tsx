@@ -14,4 +14,25 @@ export const GlobalStyles = createGlobalStyle`
     html {
         font-size: 62.5%
     }
+
+
+    ::-webkit-scrollbar {
+    width: 10px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+        background: #0B0D17; 
+    }
+    
+
+    ::-webkit-scrollbar-thumb {
+        background: #FFF; 
+        border-radius: 10px;
+    }
+
+
+    ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    }
 `;
