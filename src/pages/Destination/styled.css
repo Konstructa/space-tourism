@@ -181,6 +181,10 @@
 
 @media screen and (max-width: 760px) { 
 
+    .destination-content {
+        padding-top: 3rem
+    }
+
 
     .planet {
         width: 175px;
@@ -188,8 +192,8 @@
     }
 
     .destination-planet {
-        width: 92%;
         gap: 2px;
+        width: 100%
     }
 
     .planet-distance {
@@ -200,6 +204,7 @@
 
     .planet-description h1 {
         font-size: 56px;
+
     }
 
     .planet-description p {

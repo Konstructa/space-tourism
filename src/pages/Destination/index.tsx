@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { planets } from './planet'
 import { Distance } from '../../components/destination/Distance';
 import MenuDestination from '../../components/destination/Menu';
+import { PageTitle } from '../../components/comum/titles/page-title';
+import { PageContent } from '../../components/comum/container/Page';
+import { ContentTitle } from '../../components/comum/titles/content-title';
+import { BodyText } from '../../components/BodyText';
 
 interface PlanetDestination {
     name: string;
@@ -23,41 +27,31 @@ const Destination = () => {
     const planetsName = planets.map(planet => planet.name);
 
     return (
-        <Styled.Destination>
-            <div className="destination-content">
-                <div className="title">
-                    <h3 style={{ color: 'rgb(255, 255, 255, 0.75)', fontWeight: 'bold'}}>
-                        O1
-                    </h3>
-                    <h3>
-                        Pick your destination
-                    </h3>
-                </div>
+        <PageContent>
+            <PageTitle title="Pick your destination" number="01" />
 
-                <div className="destination-planet">
-                    <img src={planet.image} alt="" className="planet" />
-                    
+            <div className="destination-planet">
+                <img src={planet.image} alt="" className="planet" />
 
-                    <div className="destination-information">
+                <div className="destination-information">
 
-                        <MenuDestination 
-                            planetsName={planetsName} 
-                            selectPlanet={selectPlanet}
-                        />
+                    <MenuDestination
+                        planetsName={planetsName}
+                        selectPlanet={selectPlanet}
+                    />
 
-                        <div className="planet-description">
-                            <h1>{planet?.name}</h1>
-                            <p> {planet?.description}</p>
-                        </div>
+                    <Styled.PlanetDescription>
+                        <ContentTitle title={planet?.name} />
+                        <BodyText text={planet?.description}/> 
+                    </Styled.PlanetDescription>
 
-                        <Distance 
-                            distance={planet.distance} 
-                            travel={planet.travel}
-                        />
-                    </div>
+                    <Distance
+                        distance={planet.distance}
+                        travel={planet.travel}
+                    />
                 </div>
             </div>
-        </Styled.Destination>
+        </PageContent>
     )
 }
 
